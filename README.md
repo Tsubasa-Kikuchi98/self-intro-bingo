@@ -44,11 +44,16 @@ python -m pytest
 - 問題数は 24 問以上必要です。
 - **当日、参加者に URL を配ったあとは CSV を変更しないでください。** シートはシードと CSV の内容から作られるので、CSV を変えると同じ URL でも別のシートになり、記録した名前が別の質問に付いてしまいます。行の並び替えだけなら影響しません（id 順に並べ替えてから使うため）。
 
+## 公開URL
+
+- アプリ: https://self-intro-bingo-3tgmzcctesadkslmdkn9ez.streamlit.app/
+- 配布用QRコード: [qr-code.png](qr-code.png)（`?s=` の付いていない素のURLで作成）
+
 ## デプロイ（Streamlit Community Cloud）
 
 1. このリポジトリを GitHub に push します。
 2. [Streamlit Community Cloud](https://share.streamlit.io/) でリポジトリと `app.py` を指定してデプロイします。Python のバージョンは 3.13、依存関係は `requirements.txt` が使われます。
-3. 発行された URL（`https://xxx.streamlit.app`）を QR コードにして配布します。
+3. 発行された URL（`https://xxx.streamlit.app`）を QR コードにして配布します。QR コードは `?s=` の付いていない素の URL で作ります。
 
 公開範囲やプライベートリポジトリの扱いは最新の公式ドキュメントで確認してください。
 

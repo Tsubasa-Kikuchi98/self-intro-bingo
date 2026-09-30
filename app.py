@@ -63,7 +63,8 @@ st.html(
   min-width: 0 !important;
 }
 /* 上下の余白を詰める */
-.block-container { padding-top: 1.2rem !important; padding-bottom: 2rem !important; }
+/* 上の余白は Community Cloud のヘッダー（Fork表示など）に隠れない程度に残す */
+.block-container { padding-top: 3.5rem !important; padding-bottom: 2rem !important; }
 </style>
 """
 )
