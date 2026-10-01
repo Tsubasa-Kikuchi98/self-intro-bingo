@@ -71,7 +71,12 @@ st.html(
 
 
 @st.cache_data(show_spinner=False)
-def get_questions() -> list[Question]:
+def get_questions(csv_mtime: float) -> list[Question]:
+    """questions.csv を読み込む。
+
+    csv_mtime はキャッシュキー用。Community Cloud は push 後も同じプロセスで
+    動き続けるため、CSV の更新時刻を引数に含めないと古い質問が返り続ける。
+    """
     return load_questions(DATA_PATH)
 
 
@@ -221,7 +226,7 @@ def resume_url() -> str:
 
 def main() -> None:
     try:
-        questions = get_questions()
+        questions = get_questions(DATA_PATH.stat().st_mtime)
     except QuestionDataError as e:
         st.error(f"questions.csv に問題があります：{e}")
         st.stop()
